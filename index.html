@@ -322,10 +322,7 @@
       }
 
       async function saveToGithub() {
-        if (
-          CONFIG.owner === "YOUR_GITHUB_USERNAME" ||
-          CONFIG.repo === "YOUR_REPO_NAME"
-        ) {
+        if (CONFIG.owner === "sana-mukhtar" || CONFIG.repo === "dsa-tracker") {
           setStatus(
             "Set CONFIG.owner / CONFIG.repo at the top of index.html first.",
             "err",

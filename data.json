@@ -1,0 +1,1871 @@
+{
+  "topics": [
+    {
+      "id": "arrays-hashing",
+      "name": "Arrays & Hashing",
+      "questions": [
+        {
+          "id": "q-1",
+          "title": "Contains Duplicate",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/contains-duplicate/",
+          "approaches": []
+        },
+        {
+          "id": "q-2",
+          "title": "Valid Anagram",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/valid-anagram/",
+          "approaches": []
+        },
+        {
+          "id": "q-3",
+          "title": "Two Sum",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/two-sum/",
+          "approaches": []
+        },
+        {
+          "id": "q-4",
+          "title": "Group Anagrams",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/group-anagrams/",
+          "approaches": []
+        },
+        {
+          "id": "q-5",
+          "title": "Top K Frequent Elements",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/top-k-frequent-elements/",
+          "approaches": []
+        },
+        {
+          "id": "q-6",
+          "title": "Encode and Decode Strings",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/encode-and-decode-strings/",
+          "approaches": []
+        },
+        {
+          "id": "q-7",
+          "title": "Product of Array Except Self",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/product-of-array-except-self/",
+          "approaches": []
+        },
+        {
+          "id": "q-8",
+          "title": "Valid Sudoku",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/valid-sudoku/",
+          "approaches": []
+        },
+        {
+          "id": "q-9",
+          "title": "Longest Consecutive Sequence",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/longest-consecutive-sequence/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "two-pointers",
+      "name": "Two Pointers",
+      "questions": [
+        {
+          "id": "q-10",
+          "title": "Valid Palindrome",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/valid-palindrome/",
+          "approaches": []
+        },
+        {
+          "id": "q-11",
+          "title": "Two Sum II Input Array Is Sorted",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+          "approaches": []
+        },
+        {
+          "id": "q-12",
+          "title": "3Sum",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/3sum/",
+          "approaches": []
+        },
+        {
+          "id": "q-13",
+          "title": "Container With Most Water",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/container-with-most-water/",
+          "approaches": []
+        },
+        {
+          "id": "q-14",
+          "title": "Trapping Rain Water",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/trapping-rain-water/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "sliding-window",
+      "name": "Sliding Window",
+      "questions": [
+        {
+          "id": "q-15",
+          "title": "Best Time to Buy and Sell Stock",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+          "approaches": []
+        },
+        {
+          "id": "q-16",
+          "title": "Longest Substring Without Repeating Characters",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+          "approaches": []
+        },
+        {
+          "id": "q-17",
+          "title": "Longest Repeating Character Replacement",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+          "approaches": []
+        },
+        {
+          "id": "q-18",
+          "title": "Permutation in String",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/permutation-in-string/",
+          "approaches": []
+        },
+        {
+          "id": "q-19",
+          "title": "Minimum Window Substring",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/minimum-window-substring/",
+          "approaches": []
+        },
+        {
+          "id": "q-20",
+          "title": "Sliding Window Maximum",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/sliding-window-maximum/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-1",
+          "title": "Sliding Window Introduction (Intro 1)",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-2",
+          "title": "Sliding Window Introduction (Intro 2)",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-3",
+          "title": "Maximum Sum Subarray of Size K",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-4",
+          "title": "First Negative Integer in Every Window of Size K",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-5",
+          "title": "Count Occurrences of Anagrams",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-6",
+          "title": "Maximum of All Subarrays of Size K",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/sliding-window-maximum/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-7",
+          "title": "Longest Subarray of Sum K",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-8",
+          "title": "Longest Subarray with K Unique Characters",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-9",
+          "title": "Longest Substring with No Repeating Characters",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-10",
+          "title": "Pick Toys (At Most Two Types)",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/fruit-into-baskets/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-11",
+          "title": "Minimum Window Substring",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/minimum-window-substring/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "stack",
+      "name": "Stack",
+      "questions": [
+        {
+          "id": "q-21",
+          "title": "Valid Parentheses",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/valid-parentheses/",
+          "approaches": []
+        },
+        {
+          "id": "q-22",
+          "title": "Min Stack",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/min-stack/",
+          "approaches": []
+        },
+        {
+          "id": "q-23",
+          "title": "Evaluate Reverse Polish Notation",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+          "approaches": []
+        },
+        {
+          "id": "q-24",
+          "title": "Generate Parentheses",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/generate-parentheses/",
+          "approaches": []
+        },
+        {
+          "id": "q-25",
+          "title": "Daily Temperatures",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/daily-temperatures/",
+          "approaches": []
+        },
+        {
+          "id": "q-26",
+          "title": "Car Fleet",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/car-fleet/",
+          "approaches": []
+        },
+        {
+          "id": "q-27",
+          "title": "Largest Rectangle in Histogram",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-19",
+          "title": "Nearest Greater to Right",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-20",
+          "title": "Nearest Greater to Left",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-21",
+          "title": "Nearest Smaller to Left",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-22",
+          "title": "Nearest Smaller to Right",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-23",
+          "title": "Stock Span Problem",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/online-stock-span/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-24",
+          "title": "Maximum Area Histogram",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-25",
+          "title": "Max Area Rectangle in Binary Matrix",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/maximal-rectangle/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-26",
+          "title": "Rain Water Trapping",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/trapping-rain-water/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-27",
+          "title": "Minimum Element in Stack in O(1) Space",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/min-stack/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-28",
+          "title": "Delete Middle Element of a Stack",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-29",
+          "title": "Reverse a Stack using Recursion",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "binary-search",
+      "name": "Binary Search",
+      "questions": [
+        {
+          "id": "bs-classic",
+          "title": "Binary Search",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/binary-search/",
+          "approaches": [
+            {
+              "name": "Brute Force - Linear Scan",
+              "tc": "O(n)",
+              "sc": "O(1)",
+              "description": "Scan every element left to right and return the index the moment target is found. Simple but doesn't use the fact that the array is sorted.",
+              "code": "func search(nums []int, target int) int {\n\tfor i, v := range nums {\n\t\tif v == target {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}"
+            },
+            {
+              "name": "Optimal - Binary Search",
+              "tc": "O(log n)",
+              "sc": "O(1)",
+              "description": "Since the array is sorted, repeatedly halve the search space. Compare the middle element to target and discard the half that can't contain it.",
+              "code": "func search(nums []int, target int) int {\n\tlo, hi := 0, len(nums)-1\n\tfor lo <= hi {\n\t\tmid := lo + (hi-lo)/2\n\t\tif nums[mid] == target {\n\t\t\treturn mid\n\t\t} else if nums[mid] < target {\n\t\t\tlo = mid + 1\n\t\t} else {\n\t\t\thi = mid - 1\n\t\t}\n\t}\n\treturn -1\n}"
+            }
+          ]
+        },
+        {
+          "id": "bs-search-insert",
+          "title": "Search Insert Position",
+          "source": "other",
+          "leetcode": "https://leetcode.com/problems/search-insert-position/",
+          "approaches": [
+            {
+              "name": "Optimal - Binary Search (lower bound)",
+              "tc": "O(log n)",
+              "sc": "O(1)",
+              "description": "Standard binary search, but instead of returning -1 on failure, return 'lo' \u2014 the index where target would be inserted to keep the array sorted.",
+              "code": "func searchInsert(nums []int, target int) int {\n\tlo, hi := 0, len(nums)-1\n\tfor lo <= hi {\n\t\tmid := lo + (hi-lo)/2\n\t\tif nums[mid] == target {\n\t\t\treturn mid\n\t\t} else if nums[mid] < target {\n\t\t\tlo = mid + 1\n\t\t} else {\n\t\t\thi = mid - 1\n\t\t}\n\t}\n\treturn lo\n}"
+            }
+          ]
+        },
+        {
+          "id": "q-28",
+          "title": "Search a 2D Matrix",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/search-a-2d-matrix/",
+          "approaches": []
+        },
+        {
+          "id": "q-29",
+          "title": "Koko Eating Bananas",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/koko-eating-bananas/",
+          "approaches": []
+        },
+        {
+          "id": "q-30",
+          "title": "Find Minimum in Rotated Sorted Array",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+          "approaches": []
+        },
+        {
+          "id": "q-31",
+          "title": "Search in Rotated Sorted Array",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+          "approaches": []
+        },
+        {
+          "id": "q-32",
+          "title": "Time Based Key-Value Store",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/time-based-key-value-store/",
+          "approaches": []
+        },
+        {
+          "id": "q-33",
+          "title": "Median of Two Sorted Arrays",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-1",
+          "title": "Binary Search in a Sorted Array",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/binary-search/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-2",
+          "title": "Binary Search on a Reverse Sorted Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-3",
+          "title": "Find First and Last Occurrence of an Element",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-4",
+          "title": "Count of an Element in a Sorted Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-5",
+          "title": "Number of Times a Sorted Array is Rotated",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-6",
+          "title": "Find an Element in a Rotated Sorted Array",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-7",
+          "title": "Search in a Nearly Sorted Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-8",
+          "title": "Find Floor of an Element in a Sorted Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-9",
+          "title": "Find Ceil of an Element in a Sorted Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-10",
+          "title": "Next Alphabetical Element",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/find-smallest-letter-greater-than-target/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-11",
+          "title": "Position of an Element in an Infinite Sorted Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-12",
+          "title": "Index of First 1 in a Binary Sorted Infinite Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-13",
+          "title": "Minimum Difference Element in a Sorted Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-14",
+          "title": "Find Peak Element",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/find-peak-element/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-15",
+          "title": "Find Maximum Element in a Bitonic Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-16",
+          "title": "Search in a Bitonic Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-17",
+          "title": "Search in a Row-wise and Column-wise Sorted Matrix",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-18",
+          "title": "Allocate Minimum Number of Pages",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "linked-list",
+      "name": "Linked List",
+      "questions": [
+        {
+          "id": "q-34",
+          "title": "Reverse Linked List",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/reverse-linked-list/",
+          "approaches": []
+        },
+        {
+          "id": "q-35",
+          "title": "Merge Two Sorted Lists",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/merge-two-sorted-lists/",
+          "approaches": []
+        },
+        {
+          "id": "q-36",
+          "title": "Reorder List",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/reorder-list/",
+          "approaches": []
+        },
+        {
+          "id": "q-37",
+          "title": "Remove Nth Node From End of List",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+          "approaches": []
+        },
+        {
+          "id": "q-38",
+          "title": "Copy List with Random Pointer",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+          "approaches": []
+        },
+        {
+          "id": "q-39",
+          "title": "Add Two Numbers",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/add-two-numbers/",
+          "approaches": []
+        },
+        {
+          "id": "q-40",
+          "title": "Linked List Cycle",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/linked-list-cycle/",
+          "approaches": []
+        },
+        {
+          "id": "q-41",
+          "title": "Find the Duplicate Number",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/find-the-duplicate-number/",
+          "approaches": []
+        },
+        {
+          "id": "q-42",
+          "title": "LRU Cache",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/lru-cache/",
+          "approaches": []
+        },
+        {
+          "id": "q-43",
+          "title": "Merge k Sorted Lists",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/merge-k-sorted-lists/",
+          "approaches": []
+        },
+        {
+          "id": "q-44",
+          "title": "Reverse Nodes in k-Group",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "trees",
+      "name": "Trees",
+      "questions": [
+        {
+          "id": "q-45",
+          "title": "Invert Binary Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/invert-binary-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-46",
+          "title": "Maximum Depth of Binary Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-47",
+          "title": "Diameter of Binary Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/diameter-of-binary-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-48",
+          "title": "Balanced Binary Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/balanced-binary-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-49",
+          "title": "Same Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/same-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-50",
+          "title": "Subtree of Another Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/subtree-of-another-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-51",
+          "title": "Lowest Common Ancestor of a Binary Search Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-52",
+          "title": "Binary Tree Level Order Traversal",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+          "approaches": []
+        },
+        {
+          "id": "q-53",
+          "title": "Binary Tree Right Side View",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/binary-tree-right-side-view/",
+          "approaches": []
+        },
+        {
+          "id": "q-54",
+          "title": "Count Good Nodes in Binary Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-55",
+          "title": "Validate Binary Search Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/validate-binary-search-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-56",
+          "title": "Kth Smallest Element in a BST",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+          "approaches": []
+        },
+        {
+          "id": "q-57",
+          "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+          "approaches": []
+        },
+        {
+          "id": "q-58",
+          "title": "Binary Tree Maximum Path Sum",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+          "approaches": []
+        },
+        {
+          "id": "q-59",
+          "title": "Serialize and Deserialize Binary Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "tries",
+      "name": "Tries",
+      "questions": [
+        {
+          "id": "q-60",
+          "title": "Implement Trie (Prefix Tree)",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-61",
+          "title": "Design Add and Search Words Data Structure",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+          "approaches": []
+        },
+        {
+          "id": "q-62",
+          "title": "Word Search II",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/word-search-ii/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "heap",
+      "name": "Heap / Priority Queue",
+      "questions": [
+        {
+          "id": "q-63",
+          "title": "Kth Largest Element in a Stream",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+          "approaches": []
+        },
+        {
+          "id": "q-64",
+          "title": "Last Stone Weight",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/last-stone-weight/",
+          "approaches": []
+        },
+        {
+          "id": "q-65",
+          "title": "K Closest Points to Origin",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/k-closest-points-to-origin/",
+          "approaches": []
+        },
+        {
+          "id": "q-66",
+          "title": "Kth Largest Element in an Array",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+          "approaches": []
+        },
+        {
+          "id": "q-67",
+          "title": "Task Scheduler",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/task-scheduler/",
+          "approaches": []
+        },
+        {
+          "id": "q-68",
+          "title": "Design Twitter",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/design-twitter/",
+          "approaches": []
+        },
+        {
+          "id": "q-69",
+          "title": "Find Median from Data Stream",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/find-median-from-data-stream/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-12",
+          "title": "Kth Smallest Element",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-13",
+          "title": "Kth Largest Element",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-14",
+          "title": "Sort a K-Sorted Array",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-15",
+          "title": "K Closest Numbers",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq3-16",
+          "title": "Top K Frequent Numbers",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/top-k-frequent-elements/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-17",
+          "title": "Frequency Sort",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/sort-array-by-increasing-frequency/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-18",
+          "title": "K Closest Points to Origin",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/k-closest-points-to-origin/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-19",
+          "title": "Connect Ropes to Minimise the Cost",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/minimum-cost-to-connect-sticks/",
+          "approaches": []
+        },
+        {
+          "id": "vq3-20",
+          "title": "Sum of Elements Between K1'th and K2'th Smallest Elements",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "backtracking",
+      "name": "Backtracking",
+      "questions": [
+        {
+          "id": "q-70",
+          "title": "Subsets",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/subsets/",
+          "approaches": []
+        },
+        {
+          "id": "q-71",
+          "title": "Combination Sum",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/combination-sum/",
+          "approaches": []
+        },
+        {
+          "id": "q-72",
+          "title": "Permutations",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/permutations/",
+          "approaches": []
+        },
+        {
+          "id": "q-73",
+          "title": "Subsets II",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/subsets-ii/",
+          "approaches": []
+        },
+        {
+          "id": "q-74",
+          "title": "Combination Sum II",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/combination-sum-ii/",
+          "approaches": []
+        },
+        {
+          "id": "q-75",
+          "title": "Word Search",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/word-search/",
+          "approaches": []
+        },
+        {
+          "id": "q-76",
+          "title": "Palindrome Partitioning",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/palindrome-partitioning/",
+          "approaches": []
+        },
+        {
+          "id": "q-77",
+          "title": "Letter Combinations of a Phone Number",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+          "approaches": []
+        },
+        {
+          "id": "q-78",
+          "title": "N-Queens",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/n-queens/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "recursion",
+      "name": "Recursion",
+      "questions": [
+        {
+          "id": "vq2-30",
+          "title": "Print 1 to N using Recursion (Intro 1)",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-31",
+          "title": "Print 1 to N using Recursion (Intro 2)",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-32",
+          "title": "Print 1 to N using Recursion (Intro 3)",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-33",
+          "title": "Print N to 1 using Recursion (Intro 4)",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-34",
+          "title": "Height of a Binary Tree",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-35",
+          "title": "Sort an Array using Recursion",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-36",
+          "title": "Sort a Stack using Recursion",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-37",
+          "title": "Delete Middle Element of a Stack",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-38",
+          "title": "Reverse a Stack using Recursion",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-39",
+          "title": "K-th Symbol in Grammar",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/k-th-symbol-in-grammar/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-40",
+          "title": "Tower of Hanoi",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-41",
+          "title": "Print Subsets / Power Set / All Subsequences",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/subsets/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-42",
+          "title": "Print Unique Subsets",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/subsets-ii/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-43",
+          "title": "Permutation with Spaces",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-44",
+          "title": "Permutation with Case Change",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/letter-case-permutation/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-45",
+          "title": "Generate all Balanced Parentheses",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/generate-parentheses/",
+          "approaches": []
+        },
+        {
+          "id": "vq2-46",
+          "title": "Print N-bit Binary Numbers Having More 1s Than 0s",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq2-47",
+          "title": "Josephus Problem",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "graphs",
+      "name": "Graphs",
+      "questions": [
+        {
+          "id": "q-79",
+          "title": "Number of Islands",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/number-of-islands/",
+          "approaches": []
+        },
+        {
+          "id": "q-80",
+          "title": "Clone Graph",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/clone-graph/",
+          "approaches": []
+        },
+        {
+          "id": "q-81",
+          "title": "Max Area of Island",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/max-area-of-island/",
+          "approaches": []
+        },
+        {
+          "id": "q-82",
+          "title": "Pacific Atlantic Water Flow",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+          "approaches": []
+        },
+        {
+          "id": "q-83",
+          "title": "Surrounded Regions",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/surrounded-regions/",
+          "approaches": []
+        },
+        {
+          "id": "q-84",
+          "title": "Rotting Oranges",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/rotting-oranges/",
+          "approaches": []
+        },
+        {
+          "id": "q-85",
+          "title": "Walls and Gates",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/walls-and-gates/",
+          "approaches": []
+        },
+        {
+          "id": "q-86",
+          "title": "Course Schedule",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/course-schedule/",
+          "approaches": []
+        },
+        {
+          "id": "q-87",
+          "title": "Course Schedule II",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/course-schedule-ii/",
+          "approaches": []
+        },
+        {
+          "id": "q-88",
+          "title": "Redundant Connection",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/redundant-connection/",
+          "approaches": []
+        },
+        {
+          "id": "q-89",
+          "title": "Number of Connected Components in an Undirected Graph",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+          "approaches": []
+        },
+        {
+          "id": "q-90",
+          "title": "Graph Valid Tree",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/graph-valid-tree/",
+          "approaches": []
+        },
+        {
+          "id": "q-91",
+          "title": "Word Ladder",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/word-ladder/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "advanced-graphs",
+      "name": "Advanced Graphs",
+      "questions": [
+        {
+          "id": "q-92",
+          "title": "Reconstruct Itinerary",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/reconstruct-itinerary/",
+          "approaches": []
+        },
+        {
+          "id": "q-93",
+          "title": "Min Cost to Connect All Points",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+          "approaches": []
+        },
+        {
+          "id": "q-94",
+          "title": "Network Delay Time",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/network-delay-time/",
+          "approaches": []
+        },
+        {
+          "id": "q-95",
+          "title": "Swim in Rising Water",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/swim-in-rising-water/",
+          "approaches": []
+        },
+        {
+          "id": "q-96",
+          "title": "Alien Dictionary",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/alien-dictionary/",
+          "approaches": []
+        },
+        {
+          "id": "q-97",
+          "title": "Cheapest Flights Within K Stops",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "dp",
+      "name": "Dynamic Programming",
+      "questions": [
+        {
+          "id": "q-98",
+          "title": "Climbing Stairs",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/climbing-stairs/",
+          "approaches": []
+        },
+        {
+          "id": "q-99",
+          "title": "Min Cost Climbing Stairs",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+          "approaches": []
+        },
+        {
+          "id": "q-100",
+          "title": "House Robber",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/house-robber/",
+          "approaches": []
+        },
+        {
+          "id": "q-101",
+          "title": "House Robber II",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/house-robber-ii/",
+          "approaches": []
+        },
+        {
+          "id": "q-102",
+          "title": "Longest Palindromic Substring",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/longest-palindromic-substring/",
+          "approaches": []
+        },
+        {
+          "id": "q-103",
+          "title": "Palindromic Substrings",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/palindromic-substrings/",
+          "approaches": []
+        },
+        {
+          "id": "q-104",
+          "title": "Decode Ways",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/decode-ways/",
+          "approaches": []
+        },
+        {
+          "id": "q-105",
+          "title": "Coin Change",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/coin-change/",
+          "approaches": []
+        },
+        {
+          "id": "q-106",
+          "title": "Maximum Product Subarray",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/maximum-product-subarray/",
+          "approaches": []
+        },
+        {
+          "id": "q-107",
+          "title": "Word Break",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/word-break/",
+          "approaches": []
+        },
+        {
+          "id": "q-108",
+          "title": "Longest Increasing Subsequence",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/longest-increasing-subsequence/",
+          "approaches": []
+        },
+        {
+          "id": "q-109",
+          "title": "Partition Equal Subset Sum",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/partition-equal-subset-sum/",
+          "approaches": []
+        },
+        {
+          "id": "q-110",
+          "title": "Unique Paths",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/unique-paths/",
+          "approaches": []
+        },
+        {
+          "id": "q-111",
+          "title": "Longest Common Subsequence",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/longest-common-subsequence/",
+          "approaches": []
+        },
+        {
+          "id": "q-112",
+          "title": "Best Time to Buy and Sell Stock with Cooldown",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+          "approaches": []
+        },
+        {
+          "id": "q-113",
+          "title": "Coin Change II",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/coin-change-ii/",
+          "approaches": []
+        },
+        {
+          "id": "q-114",
+          "title": "Target Sum",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/target-sum/",
+          "approaches": []
+        },
+        {
+          "id": "q-115",
+          "title": "Interleaving String",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/interleaving-string/",
+          "approaches": []
+        },
+        {
+          "id": "q-116",
+          "title": "Longest Increasing Path in a Matrix",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+          "approaches": []
+        },
+        {
+          "id": "q-117",
+          "title": "Distinct Subsequences",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/distinct-subsequences/",
+          "approaches": []
+        },
+        {
+          "id": "q-118",
+          "title": "Edit Distance",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/edit-distance/",
+          "approaches": []
+        },
+        {
+          "id": "q-119",
+          "title": "Burst Balloons",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/burst-balloons/",
+          "approaches": []
+        },
+        {
+          "id": "q-120",
+          "title": "Regular Expression Matching",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/regular-expression-matching/",
+          "approaches": []
+        },
+        {
+          "id": "vq-1",
+          "title": "0/1 Knapsack",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-2",
+          "title": "Subset Sum",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-3",
+          "title": "Equal Sum Partition",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/partition-equal-subset-sum/",
+          "approaches": []
+        },
+        {
+          "id": "vq-4",
+          "title": "Count of Subsets with Given Sum",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-5",
+          "title": "Minimum Subset Sum Difference",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-6",
+          "title": "Count of Subsets with Given Difference",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-7",
+          "title": "Target Sum",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/target-sum/",
+          "approaches": []
+        },
+        {
+          "id": "vq-8",
+          "title": "Unbounded Knapsack",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-9",
+          "title": "Rod Cutting",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-10",
+          "title": "Coin Change - Maximum Number of Ways",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/coin-change-ii/",
+          "approaches": []
+        },
+        {
+          "id": "vq-11",
+          "title": "Coin Change - Minimum Number of Coins",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/coin-change/",
+          "approaches": []
+        },
+        {
+          "id": "vq-12",
+          "title": "Longest Common Subsequence",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/longest-common-subsequence/",
+          "approaches": []
+        },
+        {
+          "id": "vq-13",
+          "title": "Longest Common Substring",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-14",
+          "title": "Print Longest Common Subsequence",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-15",
+          "title": "Shortest Common Supersequence",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/shortest-common-supersequence/",
+          "approaches": []
+        },
+        {
+          "id": "vq-16",
+          "title": "Minimum Insertions & Deletions to Convert String A to B",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-17",
+          "title": "Longest Palindromic Subsequence",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/longest-palindromic-subsequence/",
+          "approaches": []
+        },
+        {
+          "id": "vq-18",
+          "title": "Minimum Deletions to Make a String Palindrome",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-19",
+          "title": "Print Shortest Common Supersequence",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-20",
+          "title": "Longest Repeating Subsequence",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-21",
+          "title": "Sequence Pattern Matching",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/is-subsequence/",
+          "approaches": []
+        },
+        {
+          "id": "vq-22",
+          "title": "Minimum Insertions to Make a String Palindrome",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
+          "approaches": []
+        },
+        {
+          "id": "vq-23",
+          "title": "Matrix Chain Multiplication",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-24",
+          "title": "Palindrome Partitioning (Minimum Cuts)",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/palindrome-partitioning-ii/",
+          "approaches": []
+        },
+        {
+          "id": "vq-25",
+          "title": "Evaluate Expression to True (Boolean Parenthesization)",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        },
+        {
+          "id": "vq-26",
+          "title": "Scramble String",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/scramble-string/",
+          "approaches": []
+        },
+        {
+          "id": "vq-27",
+          "title": "Egg Dropping Puzzle",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/super-egg-drop/",
+          "approaches": []
+        },
+        {
+          "id": "vq-28",
+          "title": "Diameter of Binary Tree",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/diameter-of-binary-tree/",
+          "approaches": []
+        },
+        {
+          "id": "vq-29",
+          "title": "Binary Tree Maximum Path Sum",
+          "source": "verma",
+          "leetcode": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+          "approaches": []
+        },
+        {
+          "id": "vq-30",
+          "title": "Maximum Path Sum Between Two Leaf Nodes",
+          "source": "verma",
+          "leetcode": "",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "greedy",
+      "name": "Greedy",
+      "questions": [
+        {
+          "id": "q-152",
+          "title": "Maximum Subarray",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/maximum-subarray/",
+          "approaches": []
+        },
+        {
+          "id": "q-153",
+          "title": "Jump Game",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/jump-game/",
+          "approaches": []
+        },
+        {
+          "id": "q-154",
+          "title": "Jump Game II",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/jump-game-ii/",
+          "approaches": []
+        },
+        {
+          "id": "q-155",
+          "title": "Gas Station",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/gas-station/",
+          "approaches": []
+        },
+        {
+          "id": "q-156",
+          "title": "Hand of Straights",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/hand-of-straights/",
+          "approaches": []
+        },
+        {
+          "id": "q-157",
+          "title": "Merge Triplets to Form Target Triplet",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/merge-triplets-to-form-target-triplet/",
+          "approaches": []
+        },
+        {
+          "id": "q-158",
+          "title": "Partition Labels",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/partition-labels/",
+          "approaches": []
+        },
+        {
+          "id": "q-159",
+          "title": "Valid Parenthesis String",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/valid-parenthesis-string/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "intervals",
+      "name": "Intervals",
+      "questions": [
+        {
+          "id": "q-160",
+          "title": "Insert Interval",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/insert-interval/",
+          "approaches": []
+        },
+        {
+          "id": "q-161",
+          "title": "Merge Intervals",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/merge-intervals/",
+          "approaches": []
+        },
+        {
+          "id": "q-162",
+          "title": "Non-overlapping Intervals",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/non-overlapping-intervals/",
+          "approaches": []
+        },
+        {
+          "id": "q-163",
+          "title": "Meeting Rooms",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/meeting-rooms/",
+          "approaches": []
+        },
+        {
+          "id": "q-164",
+          "title": "Meeting Rooms II",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/meeting-rooms-ii/",
+          "approaches": []
+        },
+        {
+          "id": "q-165",
+          "title": "Minimum Interval to Include Each Query",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "math-geometry",
+      "name": "Math & Geometry",
+      "questions": [
+        {
+          "id": "q-166",
+          "title": "Rotate Image",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/rotate-image/",
+          "approaches": []
+        },
+        {
+          "id": "q-167",
+          "title": "Spiral Matrix",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/spiral-matrix/",
+          "approaches": []
+        },
+        {
+          "id": "q-168",
+          "title": "Set Matrix Zeroes",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/set-matrix-zeroes/",
+          "approaches": []
+        },
+        {
+          "id": "q-169",
+          "title": "Happy Number",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/happy-number/",
+          "approaches": []
+        },
+        {
+          "id": "q-170",
+          "title": "Plus One",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/plus-one/",
+          "approaches": []
+        },
+        {
+          "id": "q-171",
+          "title": "Pow(x, n)",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/powx-n/",
+          "approaches": []
+        },
+        {
+          "id": "q-172",
+          "title": "Multiply Strings",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/multiply-strings/",
+          "approaches": []
+        },
+        {
+          "id": "q-173",
+          "title": "Detect Squares",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/detect-squares/",
+          "approaches": []
+        }
+      ]
+    },
+    {
+      "id": "bit-manipulation",
+      "name": "Bit Manipulation",
+      "questions": [
+        {
+          "id": "q-174",
+          "title": "Single Number",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/single-number/",
+          "approaches": []
+        },
+        {
+          "id": "q-175",
+          "title": "Number of 1 Bits",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/number-of-1-bits/",
+          "approaches": []
+        },
+        {
+          "id": "q-176",
+          "title": "Counting Bits",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/counting-bits/",
+          "approaches": []
+        },
+        {
+          "id": "q-177",
+          "title": "Reverse Bits",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/reverse-bits/",
+          "approaches": []
+        },
+        {
+          "id": "q-178",
+          "title": "Missing Number",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/missing-number/",
+          "approaches": []
+        },
+        {
+          "id": "q-179",
+          "title": "Sum of Two Integers",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/sum-of-two-integers/",
+          "approaches": []
+        },
+        {
+          "id": "q-180",
+          "title": "Reverse Integer",
+          "source": "neetcode",
+          "leetcode": "https://leetcode.com/problems/reverse-integer/",
+          "approaches": []
+        }
+      ]
+    }
+  ]
+}

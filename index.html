@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Code Journey</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DSA CODE JOURNEY</h1>
+      <p>Learning • Solving • Improving</p>
+    </header>
+
+    <div class="toolbar">
+      <button class="btn" id="edit-toggle-btn" onclick="toggleEditMode()">
+        Enable Edit Mode
+      </button>
+      <button
+        class="btn"
+        id="add-topic-btn"
+        onclick="addTopic()"
+        style="display: none"
+      >
+        + Add Topic
+      </button>
+      <button
+        class="btn primary"
+        id="save-btn"
+        onclick="saveToGithub()"
+        style="display: none"
+      >
+        Save to GitHub
+      </button>
+    </div>
+    <div id="status-msg"></div>
+
+    <div class="progress">
+      <div>PROGRESS</div>
+      <div id="progress-stats">
+        <b>—</b> Problems | <b>—</b> Topics | <b>—</b> Solved
+      </div>
+    </div>
+
+    <div id="topics-container">Loading...</div>
+
+    <footer>Data loaded from data.json</footer>
+
+    <div id="modal-root"></div>
+
+    <script>
+      // ================= CONFIG: edit these once for your repo =================
+      const CONFIG = {
+        owner: "YOUR_GITHUB_USERNAME",
+        repo: "YOUR_REPO_NAME",
+        path: "data.json",
+        branch: "main",
+      };
+      // ===========================================================================
+
+      const SOURCE_LABELS = {
+        neetcode: "NeetCode 150",
+        verma: "Aditya Verma",
+        getsdeready: "GetSDEReady",
+        other: "Other",
+      };
+      const SOURCE_ORDER = ["neetcode", "verma", "getsdeready", "other"];
+
+      let data = { topics: [] };
+      let editMode = false;
+      let ghToken = null;
+      let dirty = false;
+
+      function escapeHtml(str) {
+        if (!str) return "";
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function isSolved(q) {
+        return (q.approaches || []).some(
+          (a) => a.code && a.code.trim().length > 0,
+        );
+      }
+
+      async function loadData() {
+        try {
+          const res = await fetch("data.json?_=" + Date.now());
+          data = await res.json();
+        } catch (e) {
+          data = { topics: [] };
+        }
+        render();
+      }
+
+      function setStatus(msg, type) {
+        const el = document.getElementById("status-msg");
+        el.textContent = msg || "";
+        el.className = type || "";
+      }
+
+      function markDirty() {
+        dirty = true;
+        setStatus(
+          "Unsaved changes — click 'Save to GitHub' to publish.",
+          "pending",
+        );
+        render();
+      }
+
+      function toggleEditMode() {
+        editMode = !editMode;
+        document.getElementById("edit-toggle-btn").textContent = editMode
+          ? "Exit Edit Mode"
+          : "Enable Edit Mode";
+        document.getElementById("add-topic-btn").style.display = editMode
+          ? ""
+          : "none";
+        document.getElementById("save-btn").style.display = editMode
+          ? ""
+          : "none";
+        if (!editMode) setStatus("", "");
+        render();
+      }
+
+      function openModal(title, fields, onSubmit) {
+        const root = document.getElementById("modal-root");
+        const overlay = document.createElement("div");
+        overlay.className = "modal-overlay";
+        const modal = document.createElement("div");
+        modal.className = "modal";
+
+        const h3 = document.createElement("h3");
+        h3.textContent = title;
+        modal.appendChild(h3);
+
+        const inputs = {};
+        fields.forEach((f) => {
+          const label = document.createElement("label");
+          label.textContent = f.label;
+          modal.appendChild(label);
+          let input;
+          if (f.type === "textarea") {
+            input = document.createElement("textarea");
+          } else {
+            input = document.createElement("input");
+            input.type = "text";
+          }
+          input.value = f.value || "";
+          modal.appendChild(input);
+          inputs[f.key] = input;
+        });
+
+        const actions = document.createElement("div");
+        actions.className = "modal-actions";
+        const cancelBtn = document.createElement("button");
+        cancelBtn.className = "btn";
+        cancelBtn.textContent = "Cancel";
+        cancelBtn.onclick = () => (root.innerHTML = "");
+        const saveBtn = document.createElement("button");
+        saveBtn.className = "btn primary";
+        saveBtn.textContent = "Save";
+        saveBtn.onclick = () => {
+          const result = {};
+          fields.forEach((f) => (result[f.key] = inputs[f.key].value));
+          root.innerHTML = "";
+          onSubmit(result);
+        };
+        actions.appendChild(cancelBtn);
+        actions.appendChild(saveBtn);
+        modal.appendChild(actions);
+
+        overlay.appendChild(modal);
+        root.innerHTML = "";
+        root.appendChild(overlay);
+      }
+
+      function addTopic() {
+        openModal("Add Topic", [{ key: "name", label: "Topic name" }], (r) => {
+          if (!r.name.trim()) return;
+          data.topics.push({
+            id: "topic-" + Date.now(),
+            name: r.name.trim(),
+            questions: [],
+          });
+          markDirty();
+        });
+      }
+
+      function editTopicName(ti) {
+        const t = data.topics[ti];
+        openModal(
+          "Rename Topic",
+          [{ key: "name", label: "Topic name", value: t.name }],
+          (r) => {
+            if (!r.name.trim()) return;
+            t.name = r.name.trim();
+            markDirty();
+          },
+        );
+      }
+
+      function deleteTopic(ti) {
+        if (
+          !confirm(
+            `Delete topic '${data.topics[ti].name}' and all its questions?`,
+          )
+        )
+          return;
+        data.topics.splice(ti, 1);
+        markDirty();
+      }
+
+      function addQuestion(ti, src) {
+        openModal(
+          "Add Question",
+          [
+            { key: "title", label: "Question title" },
+            { key: "leetcode", label: "LeetCode / problem URL (optional)" },
+          ],
+          (r) => {
+            if (!r.title.trim()) return;
+            data.topics[ti].questions.push({
+              id: "q-" + Date.now(),
+              title: r.title.trim(),
+              leetcode: r.leetcode.trim(),
+              source: src,
+              approaches: [],
+            });
+            markDirty();
+          },
+        );
+      }
+
+      function editQuestion(ti, qi) {
+        const q = data.topics[ti].questions[qi];
+        openModal(
+          "Edit Question",
+          [
+            { key: "title", label: "Question title", value: q.title },
+            {
+              key: "leetcode",
+              label: "LeetCode / problem URL",
+              value: q.leetcode,
+            },
+          ],
+          (r) => {
+            if (!r.title.trim()) return;
+            q.title = r.title.trim();
+            q.leetcode = r.leetcode.trim();
+            markDirty();
+          },
+        );
+      }
+
+      function deleteQuestion(ti, qi) {
+        if (!confirm("Delete this question?")) return;
+        data.topics[ti].questions.splice(qi, 1);
+        markDirty();
+      }
+
+      function addApproach(ti, qi) {
+        openModal(
+          "Add Approach",
+          [
+            { key: "name", label: "Approach name (e.g. Brute Force, Optimal)" },
+            { key: "tc", label: "Time Complexity" },
+            { key: "sc", label: "Space Complexity" },
+            { key: "description", label: "Description", type: "textarea" },
+            { key: "code", label: "Go Code", type: "textarea" },
+          ],
+          (r) => {
+            if (!r.name.trim()) return;
+            data.topics[ti].questions[qi].approaches.push({
+              name: r.name.trim(),
+              tc: r.tc.trim(),
+              sc: r.sc.trim(),
+              description: r.description,
+              code: r.code,
+            });
+            markDirty();
+          },
+        );
+      }
+
+      function editApproach(ti, qi, ai) {
+        const a = data.topics[ti].questions[qi].approaches[ai];
+        openModal(
+          "Edit Approach",
+          [
+            { key: "name", label: "Approach name", value: a.name },
+            { key: "tc", label: "Time Complexity", value: a.tc },
+            { key: "sc", label: "Space Complexity", value: a.sc },
+            {
+              key: "description",
+              label: "Description",
+              type: "textarea",
+              value: a.description,
+            },
+            { key: "code", label: "Go Code", type: "textarea", value: a.code },
+          ],
+          (r) => {
+            if (!r.name.trim()) return;
+            a.name = r.name.trim();
+            a.tc = r.tc.trim();
+            a.sc = r.sc.trim();
+            a.description = r.description;
+            a.code = r.code;
+            markDirty();
+          },
+        );
+      }
+
+      function deleteApproach(ti, qi, ai) {
+        if (!confirm("Delete this approach?")) return;
+        data.topics[ti].questions[qi].approaches.splice(ai, 1);
+        markDirty();
+      }
+
+      async function saveToGithub() {
+        if (
+          CONFIG.owner === "YOUR_GITHUB_USERNAME" ||
+          CONFIG.repo === "YOUR_REPO_NAME"
+        ) {
+          setStatus(
+            "Set CONFIG.owner / CONFIG.repo at the top of index.html first.",
+            "err",
+          );
+          return;
+        }
+        if (!ghToken) {
+          ghToken = prompt(
+            "Enter GitHub Personal Access Token (fine-grained, 'Contents: Read and write'):",
+          );
+          if (!ghToken) return;
+        }
+
+        const api = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.path}`;
+        setStatus("Saving to GitHub...", "pending");
+        try {
+          const getRes = await fetch(`${api}?ref=${CONFIG.branch}`, {
+            headers: {
+              Authorization: `Bearer ${ghToken}`,
+              Accept: "application/vnd.github+json",
+            },
+          });
+
+          let sha = undefined;
+          if (getRes.ok) {
+            const info = await getRes.json();
+            sha = info.sha;
+          }
+
+          const content = JSON.stringify(data, null, 2);
+          const b64 = btoa(unescape(encodeURIComponent(content)));
+
+          const putRes = await fetch(api, {
+            method: "PUT",
+            headers: {
+              Authorization: `Bearer ${ghToken}`,
+              Accept: "application/vnd.github+json",
+            },
+            body: JSON.stringify({
+              message: "Update DSA tracker data.json",
+              content: b64,
+              sha,
+              branch: CONFIG.branch,
+            }),
+          });
+
+          if (!putRes.ok) {
+            throw new Error(`Failed to save (${putRes.status})`);
+          }
+
+          dirty = false;
+          setStatus("Saved to GitHub ✓", "ok");
+        } catch (e) {
+          setStatus("Error saving: " + e.message, "err");
+        }
+      }
+
+      function render() {
+        const container = document.getElementById("topics-container");
+        container.innerHTML = "";
+        let totalQ = 0,
+          solvedQ = 0;
+
+        data.topics.forEach((topic, ti) => {
+          totalQ += topic.questions.length;
+          solvedQ += topic.questions.filter(isSolved).length;
+          container.appendChild(renderTopic(topic, ti));
+        });
+
+        document.getElementById("progress-stats").innerHTML =
+          `<b>${totalQ}</b> Problems | <b>${data.topics.length}</b> Topics | <b>${solvedQ}</b> Solved`;
+      }
+
+      function renderTopic(topic, ti) {
+        const det = document.createElement("details");
+        det.className = "topic";
+
+        const sum = document.createElement("summary");
+        sum.textContent = topic.name;
+        if (editMode) {
+          sum.innerHTML += ` <button class="btn small" onclick="event.stopPropagation();editTopicName(${ti})">rename</button>
+            <button class="btn small danger" onclick="event.stopPropagation();deleteTopic(${ti})">delete</button>`;
+        }
+        det.appendChild(sum);
+
+        const body = document.createElement("div");
+        body.className = "body";
+
+        const groups = {};
+        topic.questions.forEach((q, qi) => {
+          const src = q.source || "other";
+          (groups[src] = groups[src] || []).push({ q, qi });
+        });
+
+        SOURCE_ORDER.forEach((src) => {
+          if (!editMode && (!groups[src] || groups[src].length === 0)) return;
+          body.appendChild(renderSourceGroup(ti, src, groups[src] || []));
+        });
+
+        det.appendChild(body);
+        return det;
+      }
+
+      function renderSourceGroup(ti, src, items) {
+        const det = document.createElement("details");
+        det.className = "source-group " + src;
+
+        const sum = document.createElement("summary");
+        sum.textContent = SOURCE_LABELS[src] || src;
+        det.appendChild(sum);
+
+        const body = document.createElement("div");
+        body.className = "body";
+
+        if (items.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "empty";
+          empty.textContent = "No questions yet.";
+          body.appendChild(empty);
+        }
+
+        items.forEach(({ q, qi }) =>
+          body.appendChild(renderQuestion(ti, qi, q)),
+        );
+
+        if (editMode) {
+          const row = document.createElement("div");
+          row.className = "add-row";
+          const btn = document.createElement("button");
+          btn.className = "btn small";
+          btn.textContent = "+ Add Question";
+          btn.onclick = () => addQuestion(ti, src);
+          row.appendChild(btn);
+          body.appendChild(row);
+        }
+
+        det.appendChild(body);
+        return det;
+      }
+
+      function renderQuestion(ti, qi, q) {
+        const solved = isSolved(q);
+        const det = document.createElement("details");
+        det.className = "question";
+
+        const sum = document.createElement("summary");
+        sum.innerHTML = `
+    <span class="q-title ${solved ? "solved" : "unsolved"}">${escapeHtml(q.title)}</span>
+    ${q.leetcode ? `<a class="lc-link" href="${escapeHtml(q.leetcode)}" target="_blank" onclick="event.stopPropagation()">LeetCode ↗</a>` : ""}
+    ${
+      editMode
+        ? `<button class="btn small" onclick="event.stopPropagation();editQuestion(${ti},${qi})">edit</button>
+      <button class="btn small danger" onclick="event.stopPropagation();deleteQuestion(${ti},${qi})">delete</button>`
+        : ""
+    }
+  `;
+        det.appendChild(sum);
+
+        const body = document.createElement("div");
+        body.className = "body";
+
+        if (!q.approaches || q.approaches.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "empty";
+          empty.textContent = "No approach added yet.";
+          body.appendChild(empty);
+        }
+
+        (q.approaches || []).forEach((a, ai) => {
+          body.appendChild(renderApproach(ti, qi, ai, a));
+        });
+
+        if (editMode) {
+          const row = document.createElement("div");
+          row.className = "add-row";
+          const btn = document.createElement("button");
+          btn.className = "btn small";
+          btn.textContent = "+ Add Approach";
+          btn.onclick = () => addApproach(ti, qi);
+          row.appendChild(btn);
+          body.appendChild(row);
+        }
+
+        det.appendChild(body);
+        return det;
+      }
+
+      function renderApproach(ti, qi, ai, a) {
+        const det = document.createElement("details");
+        det.className = "approach";
+
+        const sum = document.createElement("summary");
+        sum.innerHTML = `${escapeHtml(a.name)} <span class="tcsc">(TC: ${escapeHtml(a.tc || "-")}, SC: ${escapeHtml(a.sc || "-")})</span>
+        ${
+          editMode
+            ? `<button class="btn small" onclick="event.stopPropagation();editApproach(${ti},${qi},${ai})">edit</button>
+          <button class="btn small danger" onclick="event.stopPropagation();deleteApproach(${ti},${qi},${ai})">delete</button>`
+            : ""
+        }`;
+        det.appendChild(sum);
+
+        const body = document.createElement("div");
+        body.className = "body";
+
+        if (a.description) {
+          const p = document.createElement("p");
+          p.className = "desc";
+          p.textContent = a.description;
+          body.appendChild(p);
+        }
+
+        if (a.code) {
+          const pre = document.createElement("pre");
+          const codeEl = document.createElement("code");
+          codeEl.textContent = a.code;
+          pre.appendChild(codeEl);
+          body.appendChild(pre);
+        } else {
+          const empty = document.createElement("div");
+          empty.className = "empty";
+          empty.textContent = "No code added yet.";
+          body.appendChild(empty);
+        }
+
+        det.appendChild(body);
+        return det;
+      }
+
+      loadData();
+    </script>
+  </body>
+</html>

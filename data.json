@@ -403,7 +403,7 @@
               "name": "Optimal - Binary Search (lower bound)",
               "tc": "O(log n)",
               "sc": "O(1)",
-              "description": "Standard binary search, but instead of returning -1 on failure, return 'lo' \u2014 the index where target would be inserted to keep the array sorted.",
+              "description": "Standard binary search, but instead of returning -1 on failure, return 'lo' — the index where target would be inserted to keep the array sorted.",
               "code": "func searchInsert(nums []int, target int) int {\n\tlo, hi := 0, len(nums)-1\n\tfor lo <= hi {\n\t\tmid := lo + (hi-lo)/2\n\t\tif nums[mid] == target {\n\t\t\treturn mid\n\t\t} else if nums[mid] < target {\n\t\t\tlo = mid + 1\n\t\t} else {\n\t\t\thi = mid - 1\n\t\t}\n\t}\n\treturn lo\n}"
             }
           ]
@@ -1866,6 +1866,11 @@
           "approaches": []
         }
       ]
+    },
+    {
+      "id": "topic-1787770103466",
+      "name": "Test",
+      "questions": []
     }
   ]
 }

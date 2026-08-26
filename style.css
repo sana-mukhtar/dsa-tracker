@@ -42,16 +42,46 @@ details {
   border-radius: 6px;
   margin: 6px 0;
   background: #161b22;
+  transition: border-color 0.2s ease;
 }
 
 details summary {
   padding: 8px 10px;
   cursor: pointer;
   font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .topic > summary {
   font-weight: 600;
+}
+
+.topic.editing-mode {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 1px #58a6ff;
+}
+
+.topic-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.edit-trigger {
+  opacity: 0.5;
+  border-style: dashed;
+}
+
+.topic:hover .edit-trigger {
+  opacity: 1;
+}
+
+.btn.active-edit {
+  background: #1f6feb;
+  color: #ffffff;
+  border-color: #388bfd;
 }
 
 .source-group {
@@ -83,6 +113,19 @@ details summary {
   background: #0d1117;
 }
 
+.q-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.q-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
 .q-title.unsolved {
   color: #4b5259;
 }
@@ -92,14 +135,13 @@ details summary {
   font-weight: 600;
 }
 
-.lc-link {
+.problem-link {
   font-size: 0.7rem;
   color: #7d8590;
-  margin-left: 6px;
   text-decoration: none;
 }
 
-.lc-link:hover {
+.problem-link:hover {
   color: #ffa657;
 }
 

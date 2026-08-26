@@ -13,17 +13,7 @@
     </header>
 
     <div class="toolbar">
-      <button class="btn" id="edit-toggle-btn" onclick="toggleEditMode()">
-        Enable Edit Mode
-      </button>
-      <button
-        class="btn"
-        id="add-topic-btn"
-        onclick="addTopic()"
-        style="display: none"
-      >
-        + Add Topic
-      </button>
+      <button class="btn" onclick="addTopic()">+ Add Topic</button>
       <button
         class="btn primary"
         id="save-btn"
@@ -67,7 +57,7 @@
       const SOURCE_ORDER = ["neetcode", "verma", "getsdeready", "other"];
 
       let data = { topics: [] };
-      let editMode = false;
+      let activeEditingTopicId = null;
       let ghToken = null;
       let dirty = false;
 
@@ -78,6 +68,18 @@
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
           .replace(/"/g, "&quot;");
+      }
+
+      function getLinkText(url) {
+        if (!url) return "";
+        const lower = url.toLowerCase();
+        if (lower.includes("geeksforgeeks.org") || lower.includes("gfg")) {
+          return "GFG ↗";
+        }
+        if (lower.includes("leetcode.com")) {
+          return "LeetCode ↗";
+        }
+        return "Link ↗";
       }
 
       function isSolved(q) {
@@ -104,6 +106,7 @@
 
       function markDirty() {
         dirty = true;
+        document.getElementById("save-btn").style.display = "inline-block";
         setStatus(
           "Unsaved changes — click 'Save to GitHub' to publish.",
           "pending",
@@ -111,18 +114,13 @@
         render();
       }
 
-      function toggleEditMode() {
-        editMode = !editMode;
-        document.getElementById("edit-toggle-btn").textContent = editMode
-          ? "Exit Edit Mode"
-          : "Enable Edit Mode";
-        document.getElementById("add-topic-btn").style.display = editMode
-          ? ""
-          : "none";
-        document.getElementById("save-btn").style.display = editMode
-          ? ""
-          : "none";
-        if (!editMode) setStatus("", "");
+      function toggleTopicEdit(topicId, event) {
+        if (event) event.stopPropagation();
+        if (activeEditingTopicId === topicId) {
+          activeEditingTopicId = null;
+        } else {
+          activeEditingTopicId = topicId;
+        }
         render();
       }
 
@@ -181,11 +179,13 @@
       function addTopic() {
         openModal("Add Topic", [{ key: "name", label: "Topic name" }], (r) => {
           if (!r.name.trim()) return;
+          const newId = "topic-" + Date.now();
           data.topics.push({
-            id: "topic-" + Date.now(),
+            id: newId,
             name: r.name.trim(),
             questions: [],
           });
+          activeEditingTopicId = newId;
           markDirty();
         });
       }
@@ -211,6 +211,7 @@
         )
           return;
         data.topics.splice(ti, 1);
+        activeEditingTopicId = null;
         markDirty();
       }
 
@@ -219,7 +220,7 @@
           "Add Question",
           [
             { key: "title", label: "Question title" },
-            { key: "leetcode", label: "LeetCode / problem URL (optional)" },
+            { key: "leetcode", label: "Problem URL (LeetCode / GFG / etc.)" },
           ],
           (r) => {
             if (!r.title.trim()) return;
@@ -243,7 +244,7 @@
             { key: "title", label: "Question title", value: q.title },
             {
               key: "leetcode",
-              label: "LeetCode / problem URL",
+              label: "Problem URL (LeetCode / GFG / etc.)",
               value: q.leetcode,
             },
           ],
@@ -376,6 +377,7 @@
           }
 
           dirty = false;
+          document.getElementById("save-btn").style.display = "none";
           setStatus("Saved to GitHub ✓", "ok");
         } catch (e) {
           setStatus("Error saving: " + e.message, "err");
@@ -399,15 +401,24 @@
       }
 
       function renderTopic(topic, ti) {
+        const isEditing = activeEditingTopicId === topic.id;
         const det = document.createElement("details");
-        det.className = "topic";
+        det.className = `topic ${isEditing ? "editing-mode" : ""}`;
+        if (isEditing) det.open = true;
 
         const sum = document.createElement("summary");
-        sum.textContent = topic.name;
-        if (editMode) {
-          sum.innerHTML += ` <button class="btn small" onclick="event.stopPropagation();editTopicName(${ti})">rename</button>
-            <button class="btn small danger" onclick="event.stopPropagation();deleteTopic(${ti})">delete</button>`;
-        }
+        sum.innerHTML = `
+          <span>${escapeHtml(topic.name)}</span>
+          <span class="topic-actions">
+            ${
+              isEditing
+                ? `<button class="btn small" onclick="event.stopPropagation();editTopicName(${ti})">rename</button>
+                   <button class="btn small danger" onclick="event.stopPropagation();deleteTopic(${ti})">delete</button>
+                   <button class="btn small active-edit" onclick="toggleTopicEdit('${topic.id}', event)">Done</button>`
+                : `<button class="btn small edit-trigger" onclick="toggleTopicEdit('${topic.id}', event)">✎ Edit Topic</button>`
+            }
+          </span>
+        `;
         det.appendChild(sum);
 
         const body = document.createElement("div");
@@ -420,15 +431,17 @@
         });
 
         SOURCE_ORDER.forEach((src) => {
-          if (!editMode && (!groups[src] || groups[src].length === 0)) return;
-          body.appendChild(renderSourceGroup(ti, src, groups[src] || []));
+          if (!isEditing && (!groups[src] || groups[src].length === 0)) return;
+          body.appendChild(
+            renderSourceGroup(ti, src, groups[src] || [], isEditing),
+          );
         });
 
         det.appendChild(body);
         return det;
       }
 
-      function renderSourceGroup(ti, src, items) {
+      function renderSourceGroup(ti, src, items, isEditing) {
         const det = document.createElement("details");
         det.className = "source-group " + src;
 
@@ -447,10 +460,10 @@
         }
 
         items.forEach(({ q, qi }) =>
-          body.appendChild(renderQuestion(ti, qi, q)),
+          body.appendChild(renderQuestion(ti, qi, q, isEditing)),
         );
 
-        if (editMode) {
+        if (isEditing) {
           const row = document.createElement("div");
           row.className = "add-row";
           const btn = document.createElement("button");
@@ -465,22 +478,28 @@
         return det;
       }
 
-      function renderQuestion(ti, qi, q) {
+      function renderQuestion(ti, qi, q, isEditing) {
         const solved = isSolved(q);
         const det = document.createElement("details");
         det.className = "question";
 
+        const linkLabel = getLinkText(q.leetcode);
+
         const sum = document.createElement("summary");
         sum.innerHTML = `
-    <span class="q-title ${solved ? "solved" : "unsolved"}">${escapeHtml(q.title)}</span>
-    ${q.leetcode ? `<a class="lc-link" href="${escapeHtml(q.leetcode)}" target="_blank" onclick="event.stopPropagation()">LeetCode ↗</a>` : ""}
-    ${
-      editMode
-        ? `<button class="btn small" onclick="event.stopPropagation();editQuestion(${ti},${qi})">edit</button>
-      <button class="btn small danger" onclick="event.stopPropagation();deleteQuestion(${ti},${qi})">delete</button>`
-        : ""
-    }
-  `;
+          <div class="q-left">
+            <span class="q-title ${solved ? "solved" : "unsolved"}">${escapeHtml(q.title)}</span>
+            ${q.leetcode ? `<a class="problem-link" href="${escapeHtml(q.leetcode)}" target="_blank" onclick="event.stopPropagation()">${linkLabel}</a>` : ""}
+          </div>
+          ${
+            isEditing
+              ? `<div class="q-right">
+                   <button class="btn small" onclick="event.stopPropagation();editQuestion(${ti},${qi})">edit</button>
+                   <button class="btn small danger" onclick="event.stopPropagation();deleteQuestion(${ti},${qi})">delete</button>
+                 </div>`
+              : ""
+          }
+        `;
         det.appendChild(sum);
 
         const body = document.createElement("div");
@@ -494,10 +513,10 @@
         }
 
         (q.approaches || []).forEach((a, ai) => {
-          body.appendChild(renderApproach(ti, qi, ai, a));
+          body.appendChild(renderApproach(ti, qi, ai, a, isEditing));
         });
 
-        if (editMode) {
+        if (isEditing) {
           const row = document.createElement("div");
           row.className = "add-row";
           const btn = document.createElement("button");
@@ -512,18 +531,24 @@
         return det;
       }
 
-      function renderApproach(ti, qi, ai, a) {
+      function renderApproach(ti, qi, ai, a, isEditing) {
         const det = document.createElement("details");
         det.className = "approach";
 
         const sum = document.createElement("summary");
-        sum.innerHTML = `${escapeHtml(a.name)} <span class="tcsc">(TC: ${escapeHtml(a.tc || "-")}, SC: ${escapeHtml(a.sc || "-")})</span>
-        ${
-          editMode
-            ? `<button class="btn small" onclick="event.stopPropagation();editApproach(${ti},${qi},${ai})">edit</button>
-          <button class="btn small danger" onclick="event.stopPropagation();deleteApproach(${ti},${qi},${ai})">delete</button>`
-            : ""
-        }`;
+        sum.innerHTML = `
+          <div>
+            ${escapeHtml(a.name)} <span class="tcsc">(TC: ${escapeHtml(a.tc || "-")}, SC: ${escapeHtml(a.sc || "-")})</span>
+          </div>
+          ${
+            isEditing
+              ? `<div>
+                   <button class="btn small" onclick="event.stopPropagation();editApproach(${ti},${qi},${ai})">edit</button>
+                   <button class="btn small danger" onclick="event.stopPropagation();deleteApproach(${ti},${qi},${ai})">delete</button>
+                 </div>`
+              : ""
+          }
+        `;
         det.appendChild(sum);
 
         const body = document.createElement("div");

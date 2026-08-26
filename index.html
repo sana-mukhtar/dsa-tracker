@@ -39,14 +39,12 @@
     <div id="modal-root"></div>
 
     <script>
-      // ================= CONFIG: edit these once for your repo =================
       const CONFIG = {
         owner: "sana-mukhtar",
         repo: "dsa-tracker",
         path: "data.json",
         branch: "main",
       };
-      // ===========================================================================
 
       const SOURCE_LABELS = {
         neetcode: "NeetCode 150",
@@ -322,11 +320,8 @@
       }
 
       async function saveToGithub() {
-        if (CONFIG.owner === "sana-mukhtar" || CONFIG.repo === "dsa-tracker") {
-          setStatus(
-            "Set CONFIG.owner / CONFIG.repo at the top of index.html first.",
-            "err",
-          );
+        if (!CONFIG.owner || !CONFIG.repo) {
+          setStatus("Please provide a valid owner and repo in CONFIG.", "err");
           return;
         }
         if (!ghToken) {
